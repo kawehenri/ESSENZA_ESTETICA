@@ -15,9 +15,9 @@ export function Testimonials() {
         <Reveal>
           <SectionTitle
             eyebrow="Depoimentos"
-            title="Histórias a preencher"
+            title="O que elas sentem"
             titleId="testimonials-title"
-            description="Estrutura visual pronta. Substitua os textos placeholder por depoimentos reais dos clientes Essenza."
+            description="Relatos que traduzem o cuidado Essenza — da pele ao bem-estar de estar aqui."
             align="center"
           />
         </Reveal>

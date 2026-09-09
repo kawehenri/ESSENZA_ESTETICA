@@ -23,13 +23,14 @@ export function Header() {
   }, [open]);
 
   const close = () => setOpen(false);
+  const onHero = !scrolled && !open;
 
   return (
     <header
-      className={`${styles.header} ${scrolled || open ? styles.scrolled : ''}`.trim()}
+      className={`${styles.header} ${scrolled || open ? styles.scrolled : ''} ${onHero ? styles.onHero : ''}`.trim()}
     >
       <div className={`container ${styles.inner}`}>
-        <Logo variant="compact" />
+        <Logo variant="compact" light={onHero} />
 
         <nav className={styles.desktopNav} aria-label="Principal">
           <ul className={styles.navList}>
@@ -44,7 +45,13 @@ export function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Button href={clinic.whatsappHref} className={styles.cta}>
+          <Button
+            href={clinic.whatsappHref}
+            className={styles.cta}
+            variant={onHero ? 'onDark' : 'primary'}
+            target="_blank"
+            rel="noreferrer"
+          >
             Agendar
           </Button>
           <button
@@ -76,7 +83,7 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <Button href={clinic.whatsappHref} onClick={close}>
+          <Button href={clinic.whatsappHref} onClick={close} target="_blank" rel="noreferrer">
             Agendar experiência
           </Button>
         </nav>

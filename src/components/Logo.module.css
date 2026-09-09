@@ -25,10 +25,12 @@
 
 .light .wordmark {
   color: var(--color-off-white);
+  text-shadow: 0 2px 18px rgba(36, 31, 29, 0.35);
 }
 
 .light .subtitle {
-  color: rgba(250, 247, 244, 0.72);
+  color: rgba(250, 247, 244, 0.78);
+  text-shadow: 0 2px 12px rgba(36, 31, 29, 0.3);
 }
 
 .compact .wordmark {
@@ -43,5 +45,9 @@
 @media (min-width: 768px) {
   .wordmark {
     font-size: 1.5rem;
+  }
+
+  .compact .wordmark {
+    font-size: 1.25rem;
   }
 }

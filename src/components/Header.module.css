@@ -40,6 +40,19 @@
   gap: clamp(1rem, 2vw, 1.75rem);
 }
 
+.onHero .navLink {
+  color: rgba(250, 247, 244, 0.88);
+}
+
+.onHero .navLink:hover,
+.onHero .navLink:focus-visible {
+  color: var(--color-off-white);
+}
+
+.onHero .menuButton span {
+  background: var(--color-off-white);
+}
+
 .navLink {
   position: relative;
   font-size: 0.72rem;

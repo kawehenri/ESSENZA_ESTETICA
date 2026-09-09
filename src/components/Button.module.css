@@ -61,3 +61,15 @@
   border-color: var(--color-gold-soft);
   background: rgba(250, 247, 244, 0.08);
 }
+
+.onDark {
+  background: var(--color-off-white);
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-off-white);
+}
+
+.onDark:hover {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: var(--shadow-soft);
+}

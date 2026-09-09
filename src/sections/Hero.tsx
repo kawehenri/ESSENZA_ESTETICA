@@ -7,7 +7,7 @@ import styles from './Hero.module.css';
 export function Hero() {
   return (
     <section id="inicio" className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.media}>
+      <div className={styles.media} aria-hidden="false">
         <img
           src={heroImage}
           alt="Recepção sofisticada da clínica Essenza Estética com mármore claro e iluminação suave"
@@ -15,11 +15,11 @@ export function Hero() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className={styles.fade} aria-hidden="true" />
+        <div className={styles.overlay} aria-hidden="true" />
       </div>
 
       <div className={`container ${styles.content}`}>
-        <Reveal>
+        <Reveal className={styles.copy}>
           <h1 id="hero-title" className={styles.title}>
             {clinic.name}
           </h1>
@@ -28,8 +28,10 @@ export function Hero() {
             Uma experiência de estética, cuidado e bem-estar pensada para você.
           </p>
           <div className={styles.actions}>
-            <Button href="#contato">Agendar experiência</Button>
-            <Button href="#clinica" variant="secondary">
+            <Button href="#contato" variant="onDark">
+              Agendar experiência
+            </Button>
+            <Button href="#clinica" variant="ghost">
               Conhecer a clínica
             </Button>
           </div>

@@ -1,11 +1,9 @@
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { About } from './sections/About';
-import { Beauty } from './sections/Beauty';
 import { ContactCta } from './sections/ContactCta';
-import { Environment } from './sections/Environment';
-import { Experience } from './sections/Experience';
 import { Hero } from './sections/Hero';
+import { Journey } from './sections/Journey';
 import { Testimonials } from './sections/Testimonials';
 import { Treatments } from './sections/Treatments';
 
@@ -20,9 +18,7 @@ export default function App() {
         <Hero />
         <About />
         <Treatments />
-        <Experience />
-        <Environment />
-        <Beauty />
+        <Journey />
         <Testimonials />
         <ContactCta />
       </main>

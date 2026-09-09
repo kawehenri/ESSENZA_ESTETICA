@@ -32,13 +32,10 @@ export function Footer() {
               <a href={clinic.phoneHref}>{clinic.phone}</a>
             </li>
             <li>
-              <a href={clinic.whatsappHref}>{clinic.whatsapp}</a>
+              <a href={clinic.whatsappHref} target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
             </li>
-            <li>
-              <a href={clinic.emailHref}>{clinic.email}</a>
-            </li>
-            <li>{clinic.address}</li>
-            <li>{clinic.hours}</li>
           </ul>
         </div>
 
@@ -63,7 +60,6 @@ export function Footer() {
         <p>
           © {year} {clinic.fullName}. Todos os direitos reservados.
         </p>
-        <p className={styles.note}>Conteúdo e contatos editáveis — versão frontend.</p>
       </div>
     </footer>
   );

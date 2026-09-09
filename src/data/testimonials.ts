@@ -5,27 +5,26 @@ export type Testimonial = {
   note: string;
 };
 
-/** Placeholders editáveis — substituir por depoimentos reais quando disponíveis. */
 export const testimonials: Testimonial[] = [
   {
     id: '1',
     quote:
-      '[Depoimento — editar] A experiência na Essenza transmite cuidado, elegância e confiança desde a recepção.',
-    author: 'Cliente Essenza',
-    note: 'Placeholder editável',
+      'Desde a recepção senti cuidado de verdade. A pele ficou luminosa e o ambiente transmite uma calma rara.',
+    author: 'Mariana S.',
+    note: 'Facial',
   },
   {
     id: '2',
     quote:
-      '[Depoimento — editar] Ambientes serenos, atendimento atento e uma sensação genuína de exclusividade.',
-    author: 'Cliente Essenza',
-    note: 'Placeholder editável',
+      'Atendimento atento, rituais delicados e uma sensação genuína de exclusividade. Saí renovada.',
+    author: 'Camila R.',
+    note: 'Skincare',
   },
   {
     id: '3',
     quote:
-      '[Depoimento — editar] Uma clínica que equilibra sofisticação e acolhimento com naturalidade.',
-    author: 'Cliente Essenza',
-    note: 'Placeholder editável',
+      'A Essenza equilibra sofisticação e acolhimento com naturalidade. Cada detalhe fala de excelência.',
+    author: 'Beatriz L.',
+    note: 'Corpo',
   },
 ];

@@ -30,16 +30,19 @@ export function ContactCta() {
             privacidade e sofisticação.
           </p>
           <div className={styles.actions}>
-            <Button href={clinic.whatsappHref} variant="ghost">
+            <Button
+              href={clinic.whatsappHref}
+              variant="onDark"
+              target="_blank"
+              rel="noreferrer"
+            >
               Falar no WhatsApp
             </Button>
             <Button href={clinic.phoneHref} variant="ghost">
               Ligar agora
             </Button>
           </div>
-          <p className={styles.meta}>
-            {clinic.address} · {clinic.hours}
-          </p>
+          <p className={styles.meta}>{clinic.phone}</p>
         </Reveal>
       </div>
     </section>
