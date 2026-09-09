@@ -1,0 +1,40 @@
+.header {
+  max-width: 36rem;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.center :global(.gold-line) {
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  color: var(--color-text);
+}
+
+.description {
+  margin-top: var(--space-md);
+}
+
+.light .title {
+  color: var(--color-off-white);
+}
+
+.light .eyebrow {
+  color: rgba(250, 247, 244, 0.7);
+}
+
+.light .description {
+  color: rgba(250, 247, 244, 0.82);
+}
+
+.light :global(.gold-line) {
+  background: var(--color-gold-soft);
+}

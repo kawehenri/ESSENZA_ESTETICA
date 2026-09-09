@@ -1,0 +1,47 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  line-height: 1;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--color-charcoal);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.light .wordmark {
+  color: var(--color-off-white);
+}
+
+.light .subtitle {
+  color: rgba(250, 247, 244, 0.72);
+}
+
+.compact .wordmark {
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+}
+
+.compact .subtitle {
+  font-size: 0.52rem;
+}
+
+@media (min-width: 768px) {
+  .wordmark {
+    font-size: 1.5rem;
+  }
+}
