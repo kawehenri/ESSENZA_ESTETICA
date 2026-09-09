@@ -40,6 +40,10 @@
   background: var(--color-bg-alt);
 }
 
+.section--rose {
+  background: var(--color-bg-rose);
+}
+
 .gold-line {
   width: 40px;
   height: 1px;

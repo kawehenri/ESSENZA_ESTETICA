@@ -6,42 +6,49 @@ import cardWellness from '../assets/images/card-wellness.jpg';
 export type Treatment = {
   id: string;
   title: string;
+  line: string;
   description: string;
   image: string;
   imageAlt: string;
+  featured?: boolean;
 };
 
 export const treatments: Treatment[] = [
   {
     id: 'facial',
     title: 'Cuidado Facial',
+    line: 'Pele renovada, naturalmente.',
     description:
-      'Protocolos personalizados para revitalizar a pele com delicadeza, equilíbrio e atenção aos detalhes.',
+      'Protocolos pensados para valorizar a saúde e a luminosidade da pele.',
     image: cardFacial,
-    imageAlt: 'Preparação delicada para cuidado facial na Essenza',
+    imageAlt: 'Cuidado facial delicado com textura de pele realista na Essenza',
+    featured: true,
   },
   {
     id: 'skincare',
     title: 'Skincare',
+    line: 'Rituais para a sua pele.',
     description:
-      'Rotinas e tratamentos pensados para nutrir, proteger e realçar a luminosidade natural da pele.',
+      'Cuidados personalizados para nutrir, proteger e realçar sua beleza.',
     image: cardSkincare,
-    imageAlt: 'Produtos de skincare premium organizados com elegância',
+    imageAlt: 'Produtos de skincare premium em ambiente real da clínica',
   },
   {
     id: 'body',
-    title: 'Contorno Corporal',
+    title: 'Corpo',
+    line: 'Cuidado que transforma.',
     description:
-      'Experiências de cuidado corporal em ambiente sereno, com foco em bem-estar e sofisticação.',
+      'Experiências corporais pensadas para promover bem-estar e confiança.',
     image: cardBody,
-    imageAlt: 'Sala de atendimento corporal com toalhas e óleos premium',
+    imageAlt: 'Sala de cuidado corporal serena com materiais naturais',
   },
   {
-    id: 'wellness',
-    title: 'Bem-estar',
+    id: 'experience',
+    title: 'Experiência Essenza',
+    line: 'Um cuidado além da estética.',
     description:
-      'Momentos de pausa e renovação que unem tranquilidade, acolhimento e excelência estética.',
+      'Ambientes, rituais e detalhes pensados para transformar sua visita.',
     image: cardWellness,
-    imageAlt: 'Detalhe de bem-estar com chá e flores delicadas',
+    imageAlt: 'Detalhe editorial de acolhimento e pausa na Essenza',
   },
 ];

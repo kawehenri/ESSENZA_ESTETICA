@@ -1,9 +1,9 @@
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
   overflow: hidden;
   transition:
     transform var(--duration) var(--ease-out),
@@ -11,7 +11,7 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
 
@@ -25,24 +25,94 @@
   background: var(--color-beige);
 }
 
+.featured .imageWrap {
+  aspect-ratio: 4 / 5;
+}
+
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-out);
+  transition: transform 700ms var(--ease-out);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.45rem;
   padding: var(--space-lg);
+  flex: 1;
 }
 
 .title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
   color: var(--color-charcoal);
+  letter-spacing: 0.02em;
+}
+
+.line {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-charcoal-soft);
+  line-height: 1.4;
 }
 
 .description {
-  max-width: 28ch;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--color-muted);
+  max-width: 32ch;
+}
+
+.featured .content {
+  padding: var(--space-xl);
+}
+
+.compact {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+}
+
+.compact .imageWrap {
+  aspect-ratio: auto;
+  min-height: 100%;
+  height: 100%;
+}
+
+.compact .content {
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .featured {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+  }
+
+  .featured .imageWrap {
+    aspect-ratio: auto;
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .featured .content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 699px) {
+  .compact {
+    display: flex;
+  }
+
+  .compact .imageWrap {
+    aspect-ratio: 3 / 4;
+  }
 }

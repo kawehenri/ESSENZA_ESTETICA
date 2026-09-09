@@ -5,10 +5,12 @@ import { TreatmentCard } from '../components/TreatmentCard';
 import styles from './Treatments.module.css';
 
 export function Treatments() {
+  const [featured, ...rest] = treatments;
+
   return (
     <section
       id="tratamentos"
-      className={`section section--alt ${styles.section}`}
+      className={`section ${styles.section}`}
       aria-labelledby="treatments-title"
     >
       <div className="container">
@@ -17,20 +19,25 @@ export function Treatments() {
             eyebrow="Tratamentos"
             title="Cuidado sob medida"
             titleId="treatments-title"
-            description="Uma seleção editorial de experiências estéticas. Os nomes e descrições são editáveis e estão preparados para conteúdo definitivo."
-            align="center"
+            description="Experiências estéticas pensadas com delicadeza — da pele ao corpo, até o ritual de estar na Essenza."
           />
         </Reveal>
 
-        <div className={styles.grid}>
-          {treatments.map((treatment, index) => (
-            <Reveal
-              key={treatment.id}
-              delay={(Math.min(index + 1, 4) as 1 | 2 | 3 | 4)}
-            >
-              <TreatmentCard treatment={treatment} />
-            </Reveal>
-          ))}
+        <div className={styles.mosaic}>
+          <Reveal className={styles.featured}>
+            <TreatmentCard treatment={featured} featured />
+          </Reveal>
+
+          <div className={styles.side}>
+            {rest.map((treatment, index) => (
+              <Reveal
+                key={treatment.id}
+                delay={(Math.min(index + 1, 3) as 1 | 2 | 3)}
+              >
+                <TreatmentCard treatment={treatment} compact />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

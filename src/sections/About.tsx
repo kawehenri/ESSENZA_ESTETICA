@@ -14,14 +14,9 @@ export function About() {
             titleId="about-title"
           />
           <p className="body-lg">
-            A Essenza nasce do desejo de oferecer uma estética mais silenciosa:
-            espaços acolhedores, rituais delicados e um cuidado que respeita a
-            singularidade de cada pessoa.
-          </p>
-          <p className="body">
-            Aqui, a sofisticação se expressa na arquitetura, na luz, nos materiais
-            e na presença atenta da equipe. Uma clínica boutique pensada para
-            transmitir confiança, tranquilidade e exclusividade — sem excessos.
+            A Essenza oferece uma estética silenciosa: espaços acolhedores, rituais
+            delicados e um cuidado que respeita a singularidade de cada pessoa —
+            com sofisticação na arquitetura, na luz e na presença atenta da equipe.
           </p>
           <ul className={styles.values}>
             <li>Luxo delicado</li>
@@ -31,14 +26,17 @@ export function About() {
           </ul>
         </Reveal>
 
-        <Reveal delay={2} className={styles.media}>
-          <img
-            src={aboutImage}
-            alt="Sala de espera elegante da Essenza com assentos em linho e luz natural"
-            loading="lazy"
-            decoding="async"
-            className={styles.image}
-          />
+        <Reveal delay={2} className={styles.mediaBlock}>
+          <div className={styles.media}>
+            <img
+              src={aboutImage}
+              alt="Sala de espera elegante da Essenza com assentos em linho e luz natural"
+              loading="lazy"
+              decoding="async"
+              className={styles.image}
+            />
+          </div>
+          <p className={styles.caption}>ESSENZA · AMBIENTE</p>
         </Reveal>
       </div>
     </section>

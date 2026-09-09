@@ -40,6 +40,12 @@
   background: var(--color-gold);
 }
 
+.mediaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
 .media {
   overflow: hidden;
   border-radius: var(--radius-sm);
@@ -50,16 +56,24 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-out);
+  transition: transform 700ms var(--ease-out);
 }
 
 .media:hover .image {
   transform: scale(1.02);
 }
 
+.caption {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
 @media (min-width: 900px) {
   .grid {
-    grid-template-columns: 0.95fr 1.05fr;
+    grid-template-columns: 1fr 1.15fr;
     gap: var(--space-3xl);
   }
 }

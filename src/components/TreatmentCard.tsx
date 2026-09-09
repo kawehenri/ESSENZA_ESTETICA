@@ -3,11 +3,19 @@ import styles from './TreatmentCard.module.css';
 
 type TreatmentCardProps = {
   treatment: Treatment;
+  featured?: boolean;
+  compact?: boolean;
 };
 
-export function TreatmentCard({ treatment }: TreatmentCardProps) {
+export function TreatmentCard({
+  treatment,
+  featured = false,
+  compact = false,
+}: TreatmentCardProps) {
   return (
-    <article className={styles.card}>
+    <article
+      className={`${styles.card} ${featured ? styles.featured : ''} ${compact ? styles.compact : ''}`.trim()}
+    >
       <div className={styles.imageWrap}>
         <img
           src={treatment.image}
@@ -18,8 +26,9 @@ export function TreatmentCard({ treatment }: TreatmentCardProps) {
         />
       </div>
       <div className={styles.content}>
-        <h3 className={`heading-sm ${styles.title}`}>{treatment.title}</h3>
-        <p className={`body ${styles.description}`}>{treatment.description}</p>
+        <h3 className={styles.title}>{treatment.title}</h3>
+        <p className={styles.line}>{treatment.line}</p>
+        <p className={styles.description}>{treatment.description}</p>
       </div>
     </article>
   );

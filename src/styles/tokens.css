@@ -1,29 +1,31 @@
 :root {
   /* Surfaces */
-  --color-off-white: #faf7f4;
+  --color-off-white: #f8f5f2;
   --color-beige: #f3ebe3;
-  --color-nude: #e8d5d0;
+  --color-nude: #e8d6d0;
   --color-rose-soft: #c9a9a4;
   --color-champagne: #e4d5c4;
   --color-white: #ffffff;
 
   /* Text */
-  --color-charcoal: #3a322f;
+  --color-charcoal: #302a28;
   --color-charcoal-soft: #5c524e;
   --color-muted: #8a7f7a;
 
   /* Accents — gold used only as 1px accents */
-  --color-gold: #b89a6a;
+  --color-gold: #b89b7a;
   --color-gold-soft: #c9b28a;
 
   /* Semantic */
   --color-bg: var(--color-off-white);
   --color-bg-alt: var(--color-beige);
+  --color-bg-rose: #e8d6d0;
   --color-surface: var(--color-white);
   --color-text: var(--color-charcoal);
   --color-text-soft: var(--color-charcoal-soft);
-  --color-border: rgba(58, 50, 47, 0.1);
-  --color-overlay: rgba(58, 50, 47, 0.28);
+  --color-border: rgba(48, 42, 40, 0.1);
+  --color-overlay: rgba(48, 42, 40, 0.28);
+  --color-ink: #241f1d;
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
