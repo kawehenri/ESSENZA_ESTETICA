@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 0;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   overflow: hidden;
@@ -23,10 +24,11 @@
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--color-beige);
+  min-width: 0;
 }
 
 .featured .imageWrap {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 10;
 }
 
 .image {
@@ -42,21 +44,24 @@
   gap: 0.45rem;
   padding: var(--space-lg);
   flex: 1;
+  min-width: 0;
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
   color: var(--color-charcoal);
   letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
 }
 
 .line {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: clamp(0.98rem, 1.5vw, 1.05rem);
   font-style: italic;
   color: var(--color-charcoal-soft);
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .description {
@@ -65,34 +70,27 @@
   line-height: 1.65;
   font-weight: 300;
   color: var(--color-muted);
-  max-width: 32ch;
+  max-width: 36ch;
+  overflow-wrap: anywhere;
 }
 
 .featured .content {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
 
 .compact {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 .compact .imageWrap {
-  aspect-ratio: auto;
-  min-height: 100%;
-  height: 100%;
-}
-
-.compact .content {
-  justify-content: center;
-  padding: var(--space-md) var(--space-lg);
+  aspect-ratio: 3 / 4;
 }
 
 @media (min-width: 900px) {
   .featured {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     align-items: stretch;
   }
 
@@ -104,15 +102,23 @@
 
   .featured .content {
     justify-content: center;
+    padding: var(--space-xl);
   }
-}
 
-@media (max-width: 699px) {
   .compact {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
   }
 
   .compact .imageWrap {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: auto;
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .compact .content {
+    justify-content: center;
+    padding: var(--space-md) var(--space-lg);
   }
 }

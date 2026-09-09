@@ -1,12 +1,17 @@
 .section {
   background: var(--color-bg-rose);
-  overflow: hidden;
 }
 
 .mosaic {
   display: grid;
   gap: var(--space-lg);
   margin-top: var(--space-2xl);
+  min-width: 0;
+}
+
+.featured,
+.side {
+  min-width: 0;
 }
 
 .side {
@@ -14,9 +19,9 @@
   gap: var(--space-lg);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .mosaic {
-    grid-template-columns: 1.35fr 1fr;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
     gap: var(--space-xl);
     align-items: stretch;
   }

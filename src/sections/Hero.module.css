@@ -2,6 +2,7 @@
   position: relative;
   display: grid;
   align-items: end;
+  min-height: 100vh;
   min-height: 100svh;
   background: var(--color-ink);
   scroll-margin-top: 0;
@@ -45,27 +46,28 @@
 .content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 100%;
-  padding-top: calc(var(--header-height) + var(--space-2xl));
-  padding-bottom: var(--space-3xl);
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--space-2xl));
+  padding-bottom: calc(var(--space-3xl) + env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
+  min-width: 0;
 }
 
 .copy {
   max-width: 36rem;
+  min-width: 0;
 }
 
 .title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2.75rem, 11vw, 5.25rem);
-  letter-spacing: 0.06em;
-  line-height: 1.02;
+  font-size: clamp(2.4rem, 10vw, 5.25rem);
+  letter-spacing: 0.04em;
+  line-height: 1.05;
   text-transform: uppercase;
   color: var(--color-off-white);
   margin-bottom: var(--space-md);
   max-width: 100%;
+  overflow-wrap: anywhere;
   text-shadow: 0 10px 40px rgba(36, 31, 29, 0.25);
 }
 
@@ -124,13 +126,14 @@
   }
 
   .content {
-    padding-top: calc(var(--header-height) + var(--space-3xl));
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--space-3xl));
     padding-bottom: var(--space-4xl);
   }
 
   .title {
-    font-size: clamp(4rem, 6.5vw, 5.75rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(3.5rem, 6.5vw, 5.75rem);
+    letter-spacing: 0.06em;
+    overflow-wrap: normal;
   }
 
   .image {

@@ -1,5 +1,6 @@
 .header {
   max-width: 36rem;
+  min-width: 0;
 }
 
 .center {
@@ -17,10 +18,12 @@
 
 .title {
   color: var(--color-text);
+  overflow-wrap: anywhere;
 }
 
 .description {
   margin-top: var(--space-md);
+  overflow-wrap: anywhere;
 }
 
 .light .title {

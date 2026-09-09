@@ -4,7 +4,8 @@
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--header-height);
+  height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   background: transparent;
   backdrop-filter: none;
   border-bottom: 1px solid transparent;
@@ -26,18 +27,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  gap: var(--space-lg);
+  height: var(--header-height);
+  gap: var(--space-md);
+  min-width: 0;
 }
 
 .desktopNav {
   display: none;
+  min-width: 0;
 }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 1.75rem);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(0.75rem, 1.5vw, 1.75rem);
 }
 
 .onHero .navLink {
@@ -56,11 +61,17 @@
 .navLink {
   position: relative;
   font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-charcoal-soft);
   padding-block: 0.35rem;
   transition: color var(--duration-fast) var(--ease-out);
+}
+
+@media (min-width: 768px) {
+  .navLink {
+    letter-spacing: 0.16em;
+  }
 }
 
 .navLink::after {
@@ -90,6 +101,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  flex-shrink: 0;
 }
 
 .cta {
@@ -126,12 +138,18 @@
 
 .mobileOverlay {
   position: fixed;
-  inset: var(--header-height) 0 0;
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(250, 247, 244, 0.98);
-  padding: var(--space-2xl) var(--space-xl);
+  padding: var(--space-2xl) max(var(--space-xl), env(safe-area-inset-right));
+  padding-bottom: max(var(--space-2xl), env(safe-area-inset-bottom));
+  padding-left: max(var(--space-xl), env(safe-area-inset-left));
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow-y: auto;
   transition:
     opacity var(--duration) var(--ease-out),
     visibility var(--duration) var(--ease-out);
@@ -160,7 +178,7 @@
 
 .mobileLink {
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 6vw, 2.25rem);
+  font-size: clamp(1.6rem, 6vw, 2.25rem);
   letter-spacing: 0.04em;
   color: var(--color-charcoal);
   transition: color var(--duration-fast) var(--ease-out);
@@ -170,7 +188,7 @@
   color: var(--color-rose-soft);
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1024px) {
   .desktopNav {
     display: block;
   }

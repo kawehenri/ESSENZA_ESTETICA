@@ -8,17 +8,17 @@
 
 .wordmark {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   color: var(--color-charcoal);
 }
 
 .subtitle {
   font-family: var(--font-sans);
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   font-weight: 400;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
@@ -34,20 +34,33 @@
 }
 
 .compact .wordmark {
-  font-size: 1.15rem;
-  letter-spacing: 0.18em;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
 }
 
 .compact .subtitle {
-  font-size: 0.52rem;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
 }
 
 @media (min-width: 768px) {
   .wordmark {
     font-size: 1.5rem;
+    letter-spacing: 0.22em;
+  }
+
+  .subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.38em;
   }
 
   .compact .wordmark {
     font-size: 1.25rem;
+    letter-spacing: 0.18em;
+  }
+
+  .compact .subtitle {
+    font-size: 0.52rem;
+    letter-spacing: 0.28em;
   }
 }

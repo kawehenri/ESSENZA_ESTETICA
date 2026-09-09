@@ -65,13 +65,15 @@ export function Journey() {
               className={`${styles.item} ${styles[item.className]}`}
             >
               <figure className={styles.figure}>
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className={styles.image}
-                />
+                <div className={styles.imageWrap}>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className={styles.image}
+                  />
+                </div>
                 <figcaption className={styles.caption}>{item.caption}</figcaption>
               </figure>
             </Reveal>
