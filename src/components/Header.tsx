@@ -25,9 +25,11 @@ export function Header() {
   const close = () => setOpen(false);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`.trim()}>
+    <header
+      className={`${styles.header} ${scrolled || open ? styles.scrolled : ''}`.trim()}
+    >
       <div className={`container ${styles.inner}`}>
-        <Logo />
+        <Logo variant="compact" />
 
         <nav className={styles.desktopNav} aria-label="Principal">
           <ul className={styles.navList}>

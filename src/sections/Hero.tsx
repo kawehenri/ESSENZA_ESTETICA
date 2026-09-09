@@ -7,15 +7,16 @@ import styles from './Hero.module.css';
 export function Hero() {
   return (
     <section id="inicio" className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.media}>
+      <div className={styles.bg} aria-hidden="true">
         <img
           src={heroImage}
-          alt="Recepção sofisticada da clínica Essenza Estética com mármore claro e iluminação suave"
-          className={styles.image}
+          alt=""
+          className={styles.bgImage}
           fetchPriority="high"
           decoding="async"
         />
-        <div className={styles.overlay} aria-hidden="true" />
+        <div className={styles.bgBlur} />
+        <div className={styles.veil} />
       </div>
 
       <div className={`container ${styles.content}`}>

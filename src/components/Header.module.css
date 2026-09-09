@@ -1,19 +1,23 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-height);
-  background: rgba(250, 247, 244, 0.78);
-  backdrop-filter: blur(14px);
+  background: transparent;
+  backdrop-filter: none;
   border-bottom: 1px solid transparent;
   transition:
     background var(--duration) var(--ease-out),
     border-color var(--duration) var(--ease-out),
-    box-shadow var(--duration) var(--ease-out);
+    box-shadow var(--duration) var(--ease-out),
+    backdrop-filter var(--duration) var(--ease-out);
 }
 
 .scrolled {
-  background: rgba(250, 247, 244, 0.94);
+  background: rgba(250, 247, 244, 0.92);
+  backdrop-filter: blur(14px);
   border-bottom-color: var(--color-border);
   box-shadow: 0 8px 24px rgba(58, 50, 47, 0.04);
 }
