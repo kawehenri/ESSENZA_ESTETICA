@@ -26,52 +26,54 @@ export function Header() {
   const onHero = !scrolled && !open;
 
   return (
-    <header
-      className={`${styles.header} ${scrolled || open ? styles.scrolled : ''} ${onHero ? styles.onHero : ''}`.trim()}
-    >
-      <div className={`container ${styles.inner}`}>
-        <Logo variant="compact" light={onHero} />
+    <>
+      <header
+        className={`${styles.header} ${scrolled || open ? styles.scrolled : ''} ${onHero ? styles.onHero : ''}`.trim()}
+      >
+        <div className={`container ${styles.inner}`}>
+          <Logo variant="compact" light={onHero} />
 
-        <nav className={styles.desktopNav} aria-label="Principal">
-          <ul className={styles.navList}>
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} className={styles.navLink}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav className={styles.desktopNav} aria-label="Principal">
+            <ul className={styles.navList}>
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className={styles.navLink}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className={styles.actions}>
-          <Button
-            href={clinic.whatsappHref}
-            className={styles.cta}
-            variant={onHero ? 'onDark' : 'primary'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Agendar
-          </Button>
-          <button
-            type="button"
-            className={`${styles.menuButton} ${open ? styles.menuOpen : ''}`.trim()}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span />
-            <span />
-          </button>
+          <div className={styles.actions}>
+            <Button
+              href={clinic.whatsappHref}
+              className={styles.cta}
+              variant={onHero ? 'onDark' : 'primary'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Agendar
+            </Button>
+            <button
+              type="button"
+              className={`${styles.menuButton} ${open ? styles.menuOpen : ''}`.trim()}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       <div
         id="mobile-menu"
         className={`${styles.mobileOverlay} ${open ? styles.mobileOpen : ''}`.trim()}
-        hidden={!open}
+        aria-hidden={!open}
       >
         <nav className={styles.mobileNav} aria-label="Mobile">
           <ul className={styles.mobileList}>
@@ -88,6 +90,6 @@ export function Header() {
           </Button>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

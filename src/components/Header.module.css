@@ -142,7 +142,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(250, 247, 244, 0.98);
+  z-index: 99;
+  background: rgba(248, 245, 242, 0.98);
   padding: var(--space-2xl) max(var(--space-xl), env(safe-area-inset-right));
   padding-bottom: max(var(--space-2xl), env(safe-area-inset-bottom));
   padding-left: max(var(--space-xl), env(safe-area-inset-left));
@@ -150,6 +151,7 @@
   visibility: hidden;
   pointer-events: none;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transition:
     opacity var(--duration) var(--ease-out),
     visibility var(--duration) var(--ease-out);
