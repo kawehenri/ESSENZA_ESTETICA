@@ -2,6 +2,12 @@
 
 Frontend da clínica de estética premium **ESSENZA ESTÉTICA**.
 
+## Site publicado
+
+https://kawehenri.github.io/ESSENZA_ESTETICA/
+
+O deploy é automático via GitHub Actions a cada push na branch `main`.
+
 ## Desenvolvimento
 
 ```bash
